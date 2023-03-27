@@ -2,11 +2,11 @@
 
 ### 캐시 기본 동작
 
-![cache.PNG](HTTP 헤더2/cache.png)
+![cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/cache.png)
 
-![2.cache.PNG](HTTP 헤더2/2.cache.png)
+![2.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.cache.png)
 
-![3.cache.PNG](HTTP 헤더2/3.cache.png)
+![3.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.cache.png)
 
 ## 캐시가 없을 때
 
@@ -15,13 +15,13 @@
 - 브라우저 로딩 속도가 느리다.
 - 느린 사용자 경험
 
-![4.cache.PNG](HTTP 헤더2/4.cache.png)
+![4.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/4.cache.png)
 
-![5.cache.PNG](HTTP 헤더2/5.cache.png)
+![5.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/5.cache.png)
 
-![6.cache.PNG](HTTP 헤더2/6.cache.png)
+![6.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/6.cache.png)
 
-![7.cache.PNG](HTTP 헤더2/7.cache.png)
+![7.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/7.cache.png)
 
 ## 캐시 적용
 
@@ -30,11 +30,11 @@
 - 브라우저 로딩 속도가 매우 빠르다.
 - 빠른 사용자 경험
 
-![8.cache.PNG](HTTP 헤더2/8.cache.png)
+![8.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/8.cache.png)
 
-![9.cache.PNG](HTTP 헤더2/9.cache.png)
+![9.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/9.cache.png)
 
-![10.cache.PNG](HTTP 헤더2/10.cache.png)
+![10.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/10.cache.png)
 
 ## 캐시 시간 초과
 
@@ -49,28 +49,28 @@
 - 생각해보면 데이터를 전송하는 대신에 저장해 두었던 캐시를 재사용 할 수 있다.
 - 단 클라이언트의 데이터와 서버의 데이터 가 같다는 사실을 확인할 수 있는 방법 필요
     
-    ![11.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/cache.png)
+    ![11.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/cache.png)
     
 
 ## 검증 헤더 추가
 
-![12.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/12.cache.png)
+![12.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/12.cache.png)
 
-![13.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/13.cache.png)
+![13.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/13.cache.png)
 
-![14.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/14.cache.png)
+![14.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/14.cache.png)
 
-![15.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/15.cache.png)
+![15.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/15.cache.png)
 
-![16.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/16.cache.png)
+![16.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/16.cache.png)
 
-![17.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/17.cache.png)
+![17.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/17.cache.png)
 
-![18.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/18.cache.png)
+![18.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/18.cache.png)
 
-![19.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/19.cache.png)
+![19.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/19.cache.png)
 
-![20.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/20.cache.png)
+![20.cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/20.cache.png)
 
 ## 정리
 
@@ -123,21 +123,21 @@
     - 예) ETag : “aaaa” → ETag: “bbbb”
 - 진짜 단순하게 ETag만 보내서 같으면 유지, 다르면 다시 받기
 
-![etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/etag.png)
+![etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/etag.png)
 
-![2.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.etag.png)
+![2.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.etag.png)
 
-![3.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.etag.png)
+![3.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.etag.png)
 
-![4.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/4.etag.png)
+![4.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/4.etag.png)
 
-![5.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/5.etag.png)
+![5.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/5.etag.png)
 
-![6.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/6.etag.png)
+![6.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/6.etag.png)
 
-![7.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/7.etag.png)
+![7.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/7.etag.png)
 
-![8.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/8.etag.png)
+![8.etag.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/8.etag.png)
 
 ## 정리
 
@@ -189,9 +189,9 @@
 
 ## 프록시 캐시
 
-![origin.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/origin.png)
+![origin.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/origin.png)
 
-![2.origin.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.origin.png)
+![2.origin.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.origin.png)
 
 ### CDN서비스
 
@@ -235,8 +235,8 @@ CDN은 콘텐츠 전송 네트워크 또는 콘텐츠 배포 네트워크를 의
 - Pragma: no-cache
     - HTTP 1.0 하위 호환
     
-    ![no_cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/no_cache.png)
+    ![no_cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/no_cache.png)
     
-    ![2.no_cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.no_cache.png)
+    ![2.no_cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.no_cache.png)
     
-    ![3.no_cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.no_cache.png)
+    ![3.no_cache.PNG](https://github.com/joung1010/basic_network/blob/9c5266a9372622db4e2de151391d03a70b4b9d53/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.no_cache.png)
