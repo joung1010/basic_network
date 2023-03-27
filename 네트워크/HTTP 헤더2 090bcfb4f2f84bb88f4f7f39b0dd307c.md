@@ -81,6 +81,162 @@
 - 결과적으로 네트워크 다운로드가 발생하지만 용량이 적은 헤더 정보만 다운로드
 - 매우 실용적인 해결책
 
-## 캐시 시간 초과
+## 검증 헤더와 조건부 요청
 
-- 캐시 유효 시간이 초과해서 서버에 다시 요청하면 다음 두 가지 상황이 나타난다.
+- 검증 헤더
+    - 캐시 데이터와 서버 데이터가 같은지 검증하는 데이터
+    - Last-Modified, ETag
+- 조건부 요청 헤더
+    - 검증 헤더로 조건에 따른 분기
+    - if-Modified-Since: Last-Modified 사용
+    - In-None-Match: ETag 사용
+    - 조건이 만족하면 200 OK
+    - 조건이 만족하지 않으면 304 Not Modified
+
+## 검증 헤더와 조건부 요청 예시
+
+- If-Modified-Since: 이후에 데이터가 수정되었다면?
+    - 데이터 미변경 예시
+        - 캐시: 2020년 11월 10일 10:00:00 vs 서버: 2020년 11월 10일 10:00:00
+        - 304 Not Modified , 헤더 데이터만 전송(Body 미포함) → 3XX 리다이렉션, 즉 너의 캐시로 리다이렉트 해서 데이터를 계속 사용
+        - 전송 용량 0.1M (헤더 01.M, 바디 1.0M)
+    - 데이터 변경 예시
+        - 캐시: 2020년 11월 10일 10:00:00 vs 서버: 2020년 11월 10일 11:00:00
+        - 200 OK, 모든 데이터 전송(Body 포함)
+        - 전송 용량 1.1M(헤더 0.1M, 바디 1.0M)
+        
+
+### 검증 헤더와 조건부 요청 (Last-Modified, If-Modified-Since 단점)
+
+- 1초 미만 단위로 캐시 조정이 불가능
+- 날짜 기반의 로직 사용
+- 데이터를 수정해서 날짜가 다르지만, 같은 데이터를 수정해서 데이터 결과가 똑같은 경우
+- 서버에서 별도의 캐시 로직을 관리하고 싶은 경우
+    - 예) 스페이스나 주석처럼 크게 영향이 없는 변경에서 캐시를 유지하고 싶은 경우
+
+## 검증 헤더와 조건부 요청2(ETag, If-None-Match)
+
+- ETag(Entity Tag)
+- 캐시용 데이터에 임의의 고유한 버전 이름을 달아둠
+    - 예) ETag : “v1.0”, ETag : “a2jiodwjekiji2”
+- 데이터가 변경되면 이 이름을 바꾸어서 변경함(Hash를 다시 생성)
+    - 예) ETag : “aaaa” → ETag: “bbbb”
+- 진짜 단순하게 ETag만 보내서 같으면 유지, 다르면 다시 받기
+
+![etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/etag.png)
+
+![2.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.etag.png)
+
+![3.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.etag.png)
+
+![4.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/4.etag.png)
+
+![5.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/5.etag.png)
+
+![6.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/6.etag.png)
+
+![7.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/7.etag.png)
+
+![8.etag.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/8.etag.png)
+
+## 정리
+
+- 진짜 단순하게 ETag만 서버에 보내서 같으면 유지, 다르면 다시 받기!
+- 캐시 제어 로직을 서버에서 완전히 관리
+- 클라이언트는 단순히 이 값을 서버에 제공(클라이언트는 캐시 매커니즘을 모름)
+- 예)
+    - 서버는 베타 오픈 기간인 3일 동안 파일이 변경되어도 ETag를 동일하게 유지
+    - 애플리케이션 배포 주기에 맞추어 ETag 모두 갱신
+    
+
+## 캐시 제어 헤더
+
+- Cache-Control : 캐시 제어
+- Pragma: 캐시 제어(하위 호환)
+- Expires: 캐시 유효 기간(하위 호환)
+
+## Cache-Control
+
+- Cache-Control: max-age
+    - 캐시 유효 시간, 초 단위
+- Cache-Control: no-cache
+    - 데이터는 캐시해도 되지만, 항상 원(origin) 서버에 검증하고 사용
+- Cache-Control: no-store
+    - 데이터에 민감한 정보가 있으므로 저장하면 안됨(메모리에서 사용하고 최대한 빨리 삭제)
+
+### Pragma
+
+- Pragma: no-cache
+- HTTP 1.0 하위 호환
+
+### Expires
+
+- expires: Mon, 01 Jan 1990 00:00:00 GMT
+- 캐시 만료일을 정확한 날짜로 지정
+- HTTP 1.0 부터 사용
+- 지금은 더 유연한 Cache-Contorol: max-age 권장
+- Cache-Control: max-age와 함께 사용하면 Expires는 무시
+
+## 검증 헤더와 조건부 요청 헤더
+
+- 검증 헤더(Validator)
+    - ETag
+    - Last-Modifeid
+- 조건부 요청 헤더
+    - If-Match, If-None-Match: ETag값 사용
+    - If-Modifed-Since, If-UnModifed-Since: Last-Modified값 사용
+    
+
+## 프록시 캐시
+
+![origin.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/origin.png)
+
+![2.origin.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.origin.png)
+
+### CDN서비스
+
+콘텐츠 전송 네트워크(CDN)는 데이터 사용량이 많은 애플리케이션의 웹 페이지 로드 속도를 높이는 상호 연결된 서버 네트워크입니다. 
+
+CDN은 콘텐츠 전송 네트워크 또는 콘텐츠 배포 네트워크를 의미할 수 있습니다. 사용자가 웹 사이트를 방문할 때 해당 웹 사이트 서버의 데이터는 사용자의 컴퓨터에 도달하기 위해 인터넷을 통해 이동해야 합니다.
+
+ 사용자가 해당 서버에서 멀리 떨어져 있는 경우 동영상 또는 웹 사이트 이미지와 같은 대용량 파일을 로드하는 데 시간이 오래 걸립니다. 대신 웹 사이트 콘텐츠는 지리적으로 사용자와 가까운 CDN 서버에 저장되며 컴퓨터에 훨씬 빨리 도달합니다.
+
+예시) 뉴욕에 있는 사용자가 런던에 있는 업체의 웹사이트를 보고 싶어 합니다. 이 웹사이트는 영국의 서버에 호스팅되어 있습니다. 해당 사용자가 뉴욕에서 영국까지 대서양을 가로질러 요청을 보낸다면 웹사이트의 콘텐츠 로딩 시간은 길어질 것입니다. CDN은 이런 문제를 해결하기 위해 런던 웹사이트 콘텐츠를 캐싱해 전 세계 여러 곳의 ‘PoP(Points of Presence)’에 저장합니다. 이러한 PoP는 자체 캐싱 서버를 갖고 있으며 뉴욕에 있는 사용자에게 해당 콘텐츠를 전송합니다.
+
+## Cache-Control
+
+- Cache-Control: public
+    - 응답이 public 캐시에 저장되어 있음
+- Cache-Control: private
+    - 응답이 해당 사용자만을 위한 것임, private 캐시에 저장해야 함(기본값)
+- Cache-Control: s-maxage
+    - 프록시 캐시에만 적용되는 max-age
+- Age:60(HTTP 헤더)
+    - 오리진 서버에서 응답 후 프록시 캐시 내에 머문 시간(초)
+
+## 캐시 무효화
+
+## Cache-Contorol(확실한 캐시 무효화 응답)
+
+- cache-Control: no-cache, no-store, must-revalidate
+- Pragma: no-cache
+    - HTTP 1.0 하위 호환
+
+### 캐시 지시어(directives) - 확실한 캐시 무효화
+
+- Cache-Control: no-cache
+    - 데이터는 캐시해도 되지만, 항상 원 서버에 검증하고 사용(이름에 주의!)
+- Cache-Control: no-store
+    - 데이터에 민감한 정보가 있으므로 저장하면 안됨(메모리에 사용하고 최대한 빨리 삭제)
+- Cache-Control: must-revalidate
+    - 캐시 만료후 최초 조회시 원서버에 검증해야함
+    - 원 서버 접근 실패시 반드시 오류가 발생하야함 - 504(Gateway Timeout)
+    - must-validate는 캐시 유효 시간이라면 캐시를 사용함
+- Pragma: no-cache
+    - HTTP 1.0 하위 호환
+    
+    ![no_cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/no_cache.png)
+    
+    ![2.no_cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/2.no_cache.png)
+    
+    ![3.no_cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/3.no_cache.png)
