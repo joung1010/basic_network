@@ -49,28 +49,28 @@
 - 생각해보면 데이터를 전송하는 대신에 저장해 두었던 캐시를 재사용 할 수 있다.
 - 단 클라이언트의 데이터와 서버의 데이터 가 같다는 사실을 확인할 수 있는 방법 필요
     
-    ![11.cache.PNG](HTTP 헤더2/11.cache.png)
+    ![11.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/cache.png)
     
 
 ## 검증 헤더 추가
 
-![12.cache.PNG](HTTP 헤더2/12.cache.png)
+![12.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/12.cache.png)
 
-![13.cache.PNG](HTTP 헤더2/13.cache.png)
+![13.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/13.cache.png)
 
-![14.cache.PNG](HTTP 헤더2/14.cache.png)
+![14.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/14.cache.png)
 
-![15.cache.PNG](HTTP 헤더2/15.cache.png)
+![15.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/15.cache.png)
 
-![16.cache.PNG](HTTP 헤더2/16.cache.png)
+![16.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/16.cache.png)
 
-![17.cache.PNG](HTTP 헤더2/17.cache.png)
+![17.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/17.cache.png)
 
-![18.cache.PNG](HTTP 헤더2/18.cache.png)
+![18.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/18.cache.png)
 
-![19.cache.PNG](HTTP 헤더2/19.cache.png)
+![19.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/19.cache.png)
 
-![20.cache.PNG](HTTP 헤더2/20.cache.png)
+![20.cache.PNG](https://github.com/joung1010/basic_network/blob/9a0530ff1c64ba0d26340906fc4a60f05c887dda/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/HTTP%20%ED%97%A4%EB%8D%942/20.cache.png)
 
 ## 정리
 
